@@ -1,11 +1,25 @@
-[gd_scene load_steps=14 format=3 uid="uid://cbollq51r70au"]
+[gd_scene load_steps=18 format=3 uid="uid://cbollq51r70au"]
 
 [ext_resource type="Script" uid="uid://chasykounc0jb" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://dc4e5bcgptsyk" path="res://character/Finn гг (0-00-00-00).png" id="1_l8h54"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hvfyp"]
-radius = 99.0
-height = 342.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ntmi"]
+atlas = ExtResource("1_l8h54")
+region = Rect2(183, 257, 80, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btcbx"]
+atlas = ExtResource("1_l8h54")
+region = Rect2(267, 257, 80, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwnis"]
+atlas = ExtResource("1_l8h54")
+region = Rect2(351, 257, 80, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k53q1"]
+atlas = ExtResource("1_l8h54")
+region = Rect2(441, 257, 125, 182)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fhl08"]
 atlas = ExtResource("1_l8h54")
@@ -45,6 +59,23 @@ region = Rect2(422, 0, 87, 118)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l8h54"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ntmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btcbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwnis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k53q1")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 6.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fhl08")
@@ -92,12 +123,20 @@ animations = [{
 script = ExtResource("1_4ntmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-104, -63)
+position = Vector2(-0.910001, -2.74)
 shape = SubResource("CapsuleShape2D_hvfyp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-97, -79)
-scale = Vector2(1.61228, 1.61228)
+position = Vector2(-2, -2)
+scale = Vector2(0.260196, 0.260196)
 sprite_frames = SubResource("SpriteFrames_l8h54")
-animation = &"idle"
-autoplay = "idle"
+animation = &"run"
+autoplay = "run"
+frame = 1
+frame_progress = 0.953445
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.4, 2.4)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+drag_horizontal_enabled = true

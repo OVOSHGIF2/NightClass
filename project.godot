@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="NightClass"
-run/main_scene="uid://diiun48sve56j"
+run/main_scene="uid://dkypj8qobknun"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 

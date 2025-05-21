@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://diiun48sve56j"]
+
+[ext_resource type="PackedScene" uid="uid://ct0hvk1hpx8ri" path="res://background dveri.tscn" id="2_n6wxr"]
+
+[node name="1 location" type="Node2D"]
+position = Vector2(3, 2)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_n6wxr")]
+
+[node name="button 1 door" type="Button" parent="."]
+offset_left = 263.0
+offset_top = 229.0
+offset_right = 433.0
+offset_bottom = 517.0
+flat = true
+
+[node name="button 2 door" type="Button" parent="."]
+offset_left = 728.0
+offset_top = 229.0
+offset_right = 898.0
+offset_bottom = 517.0
+flat = true

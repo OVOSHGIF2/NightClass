@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8enu886ywjkp"]
+
+[ext_resource type="PackedScene" uid="uid://dc207tfyq44t8" path="res://background au.tscn" id="1_gooie"]
+
+[node name="location 3" type="Node2D"]
+
+[node name="BG au" parent="." instance=ExtResource("1_gooie")]

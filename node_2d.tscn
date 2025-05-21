@@ -1,12 +1,32 @@
-[gd_scene format=3 uid="uid://bh1oheoal1ity"]
+[gd_scene load_steps=3 format=3 uid="uid://bh1oheoal1ity"]
 
+<<<<<<< HEAD
 [node name="Node2D" type="Node2D"]
 position = Vector2(19, 21)
+=======
+[ext_resource type="Script" uid="uid://rx33658q6h8v" path="res://node_2d.gd" id="1_0e48y"]
+[ext_resource type="PackedScene" uid="uid://ct0hvk1hpx8ri" path="res://background dveri.tscn" id="1_wtcfe"]
 
-[node name="Button" type="Button" parent="."]
-offset_left = 313.0
-offset_top = 68.0
-offset_right = 687.0
-offset_bottom = 212.0
-theme_override_font_sizes/font_size = 30
-text = "ИДИ НАХУЙ"
+[node name="1 location" type="Node2D"]
+position = Vector2(3, 2)
+script = ExtResource("1_0e48y")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_wtcfe")]
+
+[node name="button 1 door" type="Button" parent="."]
+offset_left = 264.0
+offset_top = 230.0
+offset_right = 433.0
+offset_bottom = 517.0
+flat = true
+
+[node name="Button 2 door" type="Button" parent="."]
+offset_left = 728.0
+offset_top = 230.0
+offset_right = 897.0
+offset_bottom = 517.0
+flat = true
+
+[connection signal="pressed" from="button 1 door" to="." method="_on_button_1_door_pressed"]
+[connection signal="pressed" from="Button 2 door" to="." method="_on_button_2_door_pressed"]
+>>>>>>> 0d23c4a1c80c2d013c04c7827b65f29b38a36812

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct0hvk1hpx8ri"]
+
+[ext_resource type="Texture2D" uid="uid://bh5u11kvr0nd4" path="res://background/коридор..png" id="1_25fwk"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="Коридор_" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_25fwk")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyc3vbsph0s1i"]
+
+[sub_resource type="GDScript" id="GDScript_rentr"]
+script/source = "extends Area2D
+
+func _ready():
+	connect(\"body_entered\", _on_body_entered)
+
+func _on_body_entered(body):
+	if body.name == \"Player\":
+		body.die()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rentr"]
+size = Vector2(114.821, 28.6072)
+
+[node name="DeathZone" type="Node2D"]
+
+[node name="DeathZone" type="Area2D" parent="."]
+position = Vector2(266.703, 29.1513)
+script = SubResource("GDScript_rentr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(47.4103, 4.3036)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_rentr")

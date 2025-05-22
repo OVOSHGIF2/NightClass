@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://cbollq51r70au"]
 
-[ext_resource type="Script" uid="uid://chasykounc0jb" path="res://Player/player.gd" id="1_4ntmi"]
+[ext_resource type="Script" uid="uid://chasykounc0jb" path="res://Scripts/Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://dc4e5bcgptsyk" path="res://character/Finn гг (0-00-00-00).png" id="1_l8h54"]
 [ext_resource type="Texture2D" uid="uid://fsfdcs4j443l" path="res://character/подрезан.png" id="3_gwnis"]
 [ext_resource type="Texture2D" uid="uid://dys588ut6sklb" path="res://character/финн — копия.png" id="4_k53q1"]
@@ -156,6 +156,7 @@ script = ExtResource("1_4ntmi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -2)
 shape = SubResource("CapsuleShape2D_hvfyp")
+metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2, 6)
@@ -164,6 +165,7 @@ sprite_frames = SubResource("SpriteFrames_l8h54")
 animation = &"run"
 autoplay = "idle"
 frame_progress = 0.487372
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.2, 1.2)

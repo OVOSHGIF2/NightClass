@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://6dnvpbr6pkyb"]
+[gd_scene load_steps=4 format=3 uid="uid://6dnvpbr6pkyb"]
 
 [ext_resource type="Script" uid="uid://m0ekvbdyq06r" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://bjml20a4xvnje" path="res://background/аудитория.png" id="2_7vrkn"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_06t4h"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_06t4h")
+
+[node name="Аудитория" type="Sprite2D" parent="."]
+position = Vector2(582, 410)
+scale = Vector2(0.599479, 0.762963)
+texture = ExtResource("2_7vrkn")
 
 [node name="play" type="Button" parent="."]
 material = SubResource("CanvasItemMaterial_06t4h")

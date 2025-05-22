@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkypj8qobknun"]
+[gd_scene load_steps=8 format=3 uid="uid://dkypj8qobknun"]
 
 [ext_resource type="Texture2D" uid="uid://bjml20a4xvnje" path="res://background/аудитория.png" id="1_dxhta"]
 [ext_resource type="Texture2D" uid="uid://cxdeb2i5rcwwy" path="res://tileset/текстурки 1.png" id="2_3pbkc"]
-[ext_resource type="PackedScene" uid="uid://cbollq51r70au" path="res://Player/player.tscn" id="3_3pbkc"]
+[ext_resource type="PackedScene" uid="uid://cbollq51r70au" path="res://Scripts/Player/player.tscn" id="3_3pbkc"]
 [ext_resource type="PackedScene" uid="uid://bwwud40bx761p" path="res://items/gold.tscn" id="4_577k8"]
+[ext_resource type="PackedScene" uid="uid://ctsbjilamhsc0" path="res://Scripts/kill_zone.tscn" id="5_4v45a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_577k8"]
 texture = ExtResource("2_3pbkc")
@@ -2045,3 +2046,6 @@ position = Vector2(290, 340)
 
 [node name="Gold" parent="." instance=ExtResource("4_577k8")]
 position = Vector2(1021, 486)
+
+[node name="KillZone" parent="." instance=ExtResource("5_4v45a")]
+position = Vector2(966, 452)

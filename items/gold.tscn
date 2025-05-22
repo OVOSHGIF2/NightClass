@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://bwwud40bx761p"]
+
+[ext_resource type="Texture2D" uid="uid://c4mri0c0ub31n" path="res://items/coins-chests-etc-2-0-noborders.png" id="1_0wpu0"]
+[ext_resource type="Script" uid="uid://b57pclg2bk2fp" path="res://items/gold.gd" id="1_7wrdj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ko12"]
+radius = 28.0713
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wpu0"]
+atlas = ExtResource("1_0wpu0")
+region = Rect2(64, 16, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wrdj"]
+atlas = ExtResource("1_0wpu0")
+region = Rect2(80, 16, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fx5r"]
+atlas = ExtResource("1_0wpu0")
+region = Rect2(96, 16, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtfsg"]
+atlas = ExtResource("1_0wpu0")
+region = Rect2(112, 16, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evjn1"]
+atlas = ExtResource("1_0wpu0")
+region = Rect2(128, 16, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lk6x2"]
+atlas = ExtResource("1_0wpu0")
+region = Rect2(144, 16, 16, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mcr4i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wpu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wrdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fx5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtfsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evjn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lk6x2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[node name="Gold" type="Area2D"]
+script = ExtResource("1_7wrdj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5ko12")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(3.1875, 3.1875)
+sprite_frames = SubResource("SpriteFrames_mcr4i")
+animation = &"idle"
+autoplay = "idle"
+frame = 2
+frame_progress = 0.0061706
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

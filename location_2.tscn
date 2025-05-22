@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkypj8qobknun"]
+[gd_scene load_steps=7 format=3 uid="uid://dkypj8qobknun"]
 
 [ext_resource type="Texture2D" uid="uid://bjml20a4xvnje" path="res://background/аудитория.png" id="1_dxhta"]
 [ext_resource type="Texture2D" uid="uid://cxdeb2i5rcwwy" path="res://tileset/текстурки 1.png" id="2_3pbkc"]
 [ext_resource type="PackedScene" uid="uid://cbollq51r70au" path="res://Player/player.tscn" id="3_3pbkc"]
+[ext_resource type="PackedScene" uid="uid://bwwud40bx761p" path="res://items/gold.tscn" id="4_577k8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_577k8"]
 texture = ExtResource("2_3pbkc")
@@ -2041,3 +2042,6 @@ layer_0/tile_data = PackedInt32Array(2293761, 65536, 37, 2359297, 65536, 38, 242
 
 [node name="Player" parent="." instance=ExtResource("3_3pbkc")]
 position = Vector2(290, 340)
+
+[node name="Gold" parent="." instance=ExtResource("4_577k8")]
+position = Vector2(1021, 486)

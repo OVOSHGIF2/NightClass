@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 	
 
 
-@onready var health_manager = $HealthManager
+@onready var health_manager = $HealhManager
 
 func _ready():
 	# Связываем сигналы здоровья

@@ -1,0 +1,114 @@
+[gd_scene load_steps=15 format=3 uid="uid://8377iajmnkqi"]
+
+[ext_resource type="Texture2D" uid="uid://bgvs1rt8wxee2" path="res://character/бобик.png" id="1_225ps"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no3jk"]
+atlas = ExtResource("1_225ps")
+region = Rect2(114, 378, 67, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnca5"]
+atlas = ExtResource("1_225ps")
+region = Rect2(191, 378, 67, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypdsa"]
+atlas = ExtResource("1_225ps")
+region = Rect2(266, 378, 67, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stk7i"]
+atlas = ExtResource("1_225ps")
+region = Rect2(116, 120, 67, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jbks"]
+atlas = ExtResource("1_225ps")
+region = Rect2(188, 120, 67, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x64w"]
+atlas = ExtResource("1_225ps")
+region = Rect2(258, 120, 67, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3yao"]
+atlas = ExtResource("1_225ps")
+region = Rect2(328, 120, 76, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhxvb"]
+atlas = ExtResource("1_225ps")
+region = Rect2(409, 120, 67, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_am7cr"]
+atlas = ExtResource("1_225ps")
+region = Rect2(115, 246, 69, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwnhy"]
+atlas = ExtResource("1_225ps")
+region = Rect2(190, 246, 83, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uodeh"]
+atlas = ExtResource("1_225ps")
+region = Rect2(276, 246, 120, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dngco"]
+atlas = ExtResource("1_225ps")
+region = Rect2(403, 246, 120, 126)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eq2he"]
+animations = [{
+"frames": [{
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_no3jk")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_mnca5")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_ypdsa")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stk7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jbks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x64w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3yao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhxvb")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_am7cr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwnhy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uodeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dngco")
+}],
+"loop": true,
+"name": &"Sleep",
+"speed": 7.0
+}]
+
+[node name="Security" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eq2he")
+animation = &"Sleep"
+autoplay = "Idle"
+frame = 1
+frame_progress = 0.744099

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dkypj8qobknun"]
+[gd_scene load_steps=23 format=3 uid="uid://dkypj8qobknun"]
 
 [ext_resource type="Texture2D" uid="uid://bjml20a4xvnje" path="res://background/аудитория.png" id="1_dxhta"]
 [ext_resource type="Texture2D" uid="uid://cxdeb2i5rcwwy" path="res://tileset/текстурки 1.png" id="2_3pbkc"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dh0a3f3s58ar6" path="res://items/дверь.png" id="7_lbjdb"]
 [ext_resource type="PackedScene" uid="uid://hrhijgu5mape" path="res://platform.tscn" id="9_l1k5x"]
 [ext_resource type="PackedScene" uid="uid://5mo41gxy3nq0" path="res://door.tscn" id="11_pjpy3"]
+[ext_resource type="PackedScene" uid="uid://djty7xfjpnlnn" path="res://Scenes/kill_zone.tscn" id="12_0dp1u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_577k8"]
 texture = ExtResource("2_3pbkc")
@@ -3507,6 +3508,8 @@ layer_0/tile_data = PackedInt32Array(0, 131074, 0, 65536, 131074, 1, 131072, 131
 
 [node name="Player" parent="." instance=ExtResource("3_3pbkc")]
 position = Vector2(93, 506)
+
+[node name="KillZone" parent="." instance=ExtResource("12_0dp1u")]
 
 [node name="Gold" parent="." instance=ExtResource("4_577k8")]
 position = Vector2(1380, 165)

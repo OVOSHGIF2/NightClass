@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://m1m0mjr6rsdi"]
+
+[ext_resource type="Script" uid="uid://bbnfkuj8c2rlj" path="res://healh_manager.gd" id="1_38p21"]
+
+[node name="HealhManager" type="Node"]
+script = ExtResource("1_38p21")

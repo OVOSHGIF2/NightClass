@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b57pclg2bk2fp" path="res://items/gold.gd" id="1_7wrdj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ko12"]
-radius = 28.0713
+radius = 19.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0wpu0"]
 atlas = ExtResource("1_0wpu0")
@@ -63,8 +63,8 @@ script = ExtResource("1_7wrdj")
 shape = SubResource("CircleShape2D_5ko12")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -2)
-scale = Vector2(3.1875, 3.1875)
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(2.40625, 2.40625)
 sprite_frames = SubResource("SpriteFrames_mcr4i")
 animation = &"idle"
 autoplay = "idle"

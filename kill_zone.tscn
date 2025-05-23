@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://djty7xfjpnlnn"]
+
+[ext_resource type="Script" uid="uid://b6a8dxs6dn684" path="res://kill_zone.gd" id="1_tuh0n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5gn"]
+size = Vector2(898, 20)
+
+[node name="KillZone" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_tuh0n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(439, 0)
+shape = SubResource("RectangleShape2D_wp5gn")

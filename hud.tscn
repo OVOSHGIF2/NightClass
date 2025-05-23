@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://cskl3whift2jq"]
+
+[ext_resource type="Texture2D" uid="uid://b1g3lwh5e5n04" path="res://items/сердешко.png" id="1_37p78"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 48.0
+offset_top = 16.0
+offset_right = 146.0
+offset_bottom = 56.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Heart1" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_37p78")
+
+[node name="Heart2" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2

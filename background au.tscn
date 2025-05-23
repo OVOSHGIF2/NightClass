@@ -8,6 +8,6 @@
 motion_mirroring = Vector2(1146.38, 0)
 
 [node name="Аудитория" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(576.5, 324)
-scale = Vector2(0.599479, 0.6)
+position = Vector2(576.5, 404.5)
+scale = Vector2(0.599479, 0.749074)
 texture = ExtResource("1_ksuqd")

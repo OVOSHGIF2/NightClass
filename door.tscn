@@ -4,14 +4,16 @@
 [ext_resource type="Script" uid="uid://dyshsgydvj20y" path="res://door.gd" id="1_v6xrn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hun61"]
-size = Vector2(241, 320)
+size = Vector2(260, 321)
 
 [node name="Door" type="Area2D"]
 scale = Vector2(0.3, 0.3)
+collision_layer = 512
 script = ExtResource("1_v6xrn")
+target_scene = "res://background dveri.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 1)
+position = Vector2(7.64926e-06, 0.5)
 shape = SubResource("RectangleShape2D_hun61")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

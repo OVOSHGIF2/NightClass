@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bldiikiv23ew1"]
+
+[ext_resource type="Texture2D" uid="uid://dtuyyyg3n4vrn" path="res://tileset/atlas_16x.png" id="1_2pqqt"]
+[ext_resource type="PackedScene" uid="uid://djty7xfjpnlnn" path="res://Scenes/kill_zone.tscn" id="2_5ltu8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufe0f"]
+size = Vector2(15, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ltu8"]
+size = Vector2(15, 16)
+
+[node name="Fire" type="Area2D"]
+scale = Vector2(2.1, 2.1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_ufe0f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2pqqt")
+region_enabled = true
+region_rect = Rect2(96, 207, 15, 17)
+
+[node name="KillZone" parent="." instance=ExtResource("2_5ltu8")]
+position = Vector2(0.5, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+shape = SubResource("RectangleShape2D_5ltu8")

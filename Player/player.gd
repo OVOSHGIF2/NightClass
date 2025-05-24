@@ -45,3 +45,8 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
+var is_teleporting: bool = false
+
+func _teleport_player():
+	if is_teleporting: return
+	is_teleporting = true

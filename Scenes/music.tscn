@@ -3,7 +3,9 @@
 [ext_resource type="AudioStream" uid="uid://cbnmkpijwx6xc" path="res://Music/Moon_-_Crystals_63415460.mp3" id="1_fbmny"]
 
 [node name="Music" type="AudioStreamPlayer2D"]
+position = Vector2(790, 132)
 stream = ExtResource("1_fbmny")
 autoplay = true
+max_distance = 4096.0
 attenuation = 0.00404399
 bus = &"Music"

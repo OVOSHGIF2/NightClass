@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://m1m0mjr6rsdi"]
+[gd_scene load_steps=3 format=3 uid="uid://m1m0mjr6rsdi"]
 
-[ext_resource type="Script" uid="uid://bbnfkuj8c2rlj" path="res://healh_manager.gd" id="1_38p21"]
+[ext_resource type="Script" uid="uid://bbnfkuj8c2rlj" path="res://health_manager.gd" id="1_38p21"]
+[ext_resource type="AudioStream" uid="uid://bgug7limqdk52" path="res://Sounds/Damage.mp3" id="2_fnigt"]
 
 [node name="HealthManager" type="Node"]
 script = ExtResource("1_38p21")
+
+[node name="Damage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fnigt")
+bus = &"SFX"

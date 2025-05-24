@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://b6a8dxs6dn684" path="res://Scenes/kill_zone.gd" id="1_tuh0n"]
 
 [node name="KillZone" type="Area2D"]
-collision_mask = 2
+collision_layer = 4
 script = ExtResource("1_tuh0n")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.6
+wait_time = 0.1
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

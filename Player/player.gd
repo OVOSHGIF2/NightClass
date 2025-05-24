@@ -1,11 +1,17 @@
 extends CharacterBody2D
 
 
+
 const SPEED = 400.0
 const JUMP_VELOCITY = -500.0
 
-
+@export var heartscontainer:HeartsContainer 
+@onready var healthManager:HealthManager = $HealthManager
 @onready var anim = $AnimatedSprite2D
+
+func _ready():
+	heartscontainer.setMaxHearts(healthManager.max_health)
+	healthManager.healthChanged.connect(heartscontainer.updateHearts)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -20,7 +26,7 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("Move_Left", "Move_Right")
 	if direction:
 		velocity.x = direction * SPEED
 		if velocity.y == 0:
@@ -39,27 +45,3 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-
-
-@onready var health_manager = $HealhManager
-
-func _ready():
-	# Связываем сигналы здоровья
-	health_manager.health_updated.connect(_update_hud)
-	health_manager.health_depleted.connect(_on_death)
-
-func _update_hud(health: int):
-	# Получаем доступ к сердечкам
-	var hearts = get_tree().root.get_node("hud/MarginContainer/HBoxContainer")
-	
-	# Обновляем каждое сердечко
-	for i in range(hearts.get_child_count()):
-		var heart = hearts.get_child(i)
-		if i < health:
-			heart.texture = load("res://Sprites/heart_full.png")
-		else:
-			heart.texture = load("res://Sprites/heart_empty.png")
-
-func _on_death():
-	# Перезагрузка сцены
-	get_tree().reload_current_scene()

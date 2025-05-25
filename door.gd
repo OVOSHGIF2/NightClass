@@ -14,6 +14,7 @@ func _on_body_entered(body: Node):
 	# Проверяем что вошедший объект - игрок по имени
 	if body.name == "Player": # <-- ИМЯ ВАШЕГО ИГРОКА В СЦЕНЕ!
 		_teleport(body)
+		
 
 func _teleport(player: Node):
 	if target_scene.is_empty():

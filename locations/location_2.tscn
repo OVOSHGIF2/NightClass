@@ -1,7 +1,8 @@
-[gd_scene load_steps=40 format=3 uid="uid://dkypj8qobknun"]
+[gd_scene load_steps=42 format=3 uid="uid://dkypj8qobknun"]
 
 [ext_resource type="PackedScene" uid="uid://dh05fekr3qrnx" path="res://gui/hearts_container.tscn" id="1_5at0x"]
 [ext_resource type="Texture2D" uid="uid://bjml20a4xvnje" path="res://background/аудитория.png" id="1_dxhta"]
+[ext_resource type="Script" uid="uid://diewb5rxhdlg4" path="res://locations/canvas_layer.gd" id="1_iw4nx"]
 [ext_resource type="Texture2D" uid="uid://cxdeb2i5rcwwy" path="res://tileset/текстурки 1.png" id="2_3pbkc"]
 [ext_resource type="PackedScene" uid="uid://cbollq51r70au" path="res://Player/player.tscn" id="3_3pbkc"]
 [ext_resource type="Texture2D" uid="uid://bc2ip4sluvr0i" path="res://tileset/Sprout Lands - Sprites - Basic pack/Objects/Basic_Furniture.png" id="3_j0oor"]
@@ -16,6 +17,8 @@
 [ext_resource type="AudioStream" uid="uid://ddmkiccgwygy6" path="res://Sounds/Pickup Coin.mp3" id="12_x0sks"]
 [ext_resource type="PackedScene" uid="uid://8377iajmnkqi" path="res://Security/security.tscn" id="13_luphw"]
 [ext_resource type="PackedScene" uid="uid://bldiikiv23ew1" path="res://fire.tscn" id="16_bhy2c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gg0rq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_577k8"]
 texture = ExtResource("2_3pbkc")
@@ -3649,6 +3652,7 @@ _data = {
 [node name="location 2" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_iw4nx")
 
 [node name="HeartsContainer" parent="CanvasLayer" instance=ExtResource("1_5at0x")]
 offset_left = 36.0
@@ -3656,7 +3660,15 @@ offset_top = 24.0
 offset_right = 95.0
 offset_bottom = 64.0
 scale = Vector2(2.64, 2.64)
-metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+modulate = Color(0.42, 0.42, 0.1638, 1)
+self_modulate = Color(0.419608, 0.419608, 0.164706, 1)
+offset_left = 38.0
+offset_top = 99.0
+offset_right = 78.0
+offset_bottom = 122.0
+label_settings = SubResource("LabelSettings_gg0rq")
 
 [node name="BG au" type="ParallaxBackground" parent="."]
 
@@ -3664,7 +3676,7 @@ metadata/_edit_use_anchors_ = true
 motion_mirroring = Vector2(1146.38, 0)
 
 [node name="Аудитория" type="Sprite2D" parent="BG au/ParallaxLayer"]
-position = Vector2(604, 411)
+position = Vector2(585, 405)
 scale = Vector2(0.599479, 0.750926)
 texture = ExtResource("1_dxhta")
 
@@ -3709,47 +3721,6 @@ damage = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 position = Vector2(2524.5, 714)
 shape = SubResource("RectangleShape2D_x0sks")
-
-[node name="Gold" parent="." instance=ExtResource("4_577k8")]
-position = Vector2(1380, 165)
-
-[node name="PickUp Sound" type="AudioStreamPlayer2D" parent="Gold"]
-stream = ExtResource("12_x0sks")
-
-[node name="Gold4" parent="Gold" instance=ExtResource("4_577k8")]
-position = Vector2(796, 133)
-
-[node name="PickUp Sound" type="AudioStreamPlayer2D" parent="Gold/Gold4"]
-position = Vector2(-796, -133)
-stream = ExtResource("12_x0sks")
-
-[node name="Gold5" parent="Gold" instance=ExtResource("4_577k8")]
-position = Vector2(-641, 289)
-
-[node name="PickUp Sound" type="AudioStreamPlayer2D" parent="Gold/Gold5"]
-position = Vector2(641, -289)
-stream = ExtResource("12_x0sks")
-
-[node name="Gold6" parent="Gold" instance=ExtResource("4_577k8")]
-position = Vector2(-641, 415)
-
-[node name="PickUp Sound" type="AudioStreamPlayer2D" parent="Gold/Gold6"]
-position = Vector2(641, -289)
-stream = ExtResource("12_x0sks")
-
-[node name="Gold2" parent="Gold" instance=ExtResource("4_577k8")]
-position = Vector2(-691, -55)
-
-[node name="PickUp Sound" type="AudioStreamPlayer2D" parent="Gold/Gold2"]
-position = Vector2(691, 55)
-stream = ExtResource("12_x0sks")
-
-[node name="Gold3" parent="Gold" instance=ExtResource("4_577k8")]
-position = Vector2(-1300, 199)
-
-[node name="PickUp Sound" type="AudioStreamPlayer2D" parent="Gold/Gold3"]
-position = Vector2(1300, -199)
-stream = ExtResource("12_x0sks")
 
 [node name="Platform" parent="." instance=ExtResource("9_l1k5x")]
 position = Vector2(1286, 428)
@@ -3923,3 +3894,53 @@ position = Vector2(2686, 471)
 
 [node name="Security3" parent="." instance=ExtResource("13_luphw")]
 position = Vector2(3731, 62)
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Gold3" parent="Coins" instance=ExtResource("4_577k8")]
+position = Vector2(80, 364)
+
+[node name="PickUp Sound" type="AudioStreamPlayer2D" parent="Coins/Gold3"]
+position = Vector2(1300, -199)
+stream = ExtResource("12_x0sks")
+
+[node name="Gold2" parent="Coins" instance=ExtResource("4_577k8")]
+position = Vector2(689, 110)
+
+[node name="PickUp Sound" type="AudioStreamPlayer2D" parent="Coins/Gold2"]
+position = Vector2(691, 55)
+stream = ExtResource("12_x0sks")
+
+[node name="Gold6" parent="Coins" instance=ExtResource("4_577k8")]
+position = Vector2(739, 580)
+
+[node name="PickUp Sound" type="AudioStreamPlayer2D" parent="Coins/Gold6"]
+position = Vector2(641, -289)
+stream = ExtResource("12_x0sks")
+
+[node name="Gold5" parent="Coins" instance=ExtResource("4_577k8")]
+position = Vector2(739, 454)
+
+[node name="PickUp Sound" type="AudioStreamPlayer2D" parent="Coins/Gold5"]
+position = Vector2(641, -289)
+stream = ExtResource("12_x0sks")
+
+[node name="Gold7" parent="Coins" instance=ExtResource("4_577k8")]
+position = Vector2(3851, 165)
+
+[node name="PickUp Sound" type="AudioStreamPlayer2D" parent="Coins/Gold7"]
+position = Vector2(-796, -133)
+stream = ExtResource("12_x0sks")
+
+[node name="Gold4" parent="Coins" instance=ExtResource("4_577k8")]
+position = Vector2(2176, 298)
+
+[node name="PickUp Sound" type="AudioStreamPlayer2D" parent="Coins/Gold4"]
+position = Vector2(-796, -133)
+stream = ExtResource("12_x0sks")
+
+[node name="Gold" parent="Coins" instance=ExtResource("4_577k8")]
+position = Vector2(1380, 165)
+
+[node name="PickUp Sound" type="AudioStreamPlayer2D" parent="Coins/Gold"]
+stream = ExtResource("12_x0sks")

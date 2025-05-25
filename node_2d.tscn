@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bh1oheoal1ity"]
 
-[ext_resource type="Script" uid="uid://rx33658q6h8v" path="res://node_2d.gd" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://ca4dqsg73hl61" path="res://node_2d.gd" id="1_0e48y"]
 [ext_resource type="PackedScene" uid="uid://ct0hvk1hpx8ri" path="res://background dveri.tscn" id="1_wtcfe"]
 
 [node name="1 location" type="Node2D"]
